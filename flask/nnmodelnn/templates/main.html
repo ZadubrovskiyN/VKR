@@ -1,0 +1,39 @@
+<!doctype html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+
+.result{
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
+
+<head>
+    <title> Прогнозирование соотношения матрица - наполнитель для композиционных материалов</title>
+</head>
+
+<form action="{{url_for('main'}}" method="POST">
+    <fieldset>
+        <legend>Введите значение</legend>
+        Плотность
+        <input name = 'plotnost' type ='number'
+        required>
+        <br>
+        <br>
+        <input type="submit">
+    </fieldset> 
+</form>    
+ 
+<div class="result" align="center"
+    {% if result %}
+        <br>
+        <p style="font-size:50px">
+        Плотность
+        </p>
+        <p style="font-size:50px"> {{result}}</p>
+    {% endif %}
+</div>
